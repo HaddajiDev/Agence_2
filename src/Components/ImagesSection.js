@@ -40,9 +40,7 @@ function ImagesSection() {
 					<h2>THE TRIP OF YOUR DREAM</h2>
 				</div>
 				<div class="overlay-text">
-					<h2>THE TRIP OF YOUR DREAM</h2>
-					<p>~~~~~~</p>
-					<h2>THE TRIP OF YOUR DREAM</h2>
+					<h2>THE TRIP OF YOUR DREAM</h2>					
 				</div>
 			</div>
 
