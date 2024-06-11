@@ -104,24 +104,28 @@ html{
   position: relative;
   display: inline-block;
   width: 100%;
+  
+  
+
 }
 
 .text-container {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100% !important;
-  height: 150px;   
-  display: flex;
-  justify-content: space-between;  
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+ 
+  
 }
 
-.overlay-text {  
-  color: white;
+.overlay-text {    
   background: rgba(0, 0, 0, 0.5);
   padding: 20px;
   border-radius: 10px;
   text-align: center;
+  width: 100%;
+  color: white;
 }
 
 .texts{
@@ -131,3 +135,79 @@ html{
   gap: 150px;  
 }
 
+.search_flight{
+  display: flex;
+  flex-direction: column;  
+  background: rgba(255, 255, 255, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+  color: black;  
+}
+
+.m-2-sec{
+  display: flex;
+  justify-content: space-around;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+}
+
+.small-title{
+  font-size: 12px;
+  font-weight: bold;
+  
+}
+
+.sel{
+  padding: 2%;
+  border: none;
+  border-radius: 20px;  
+}
+
+.search_flight button{
+  border: none;
+  background-color: #FF8C00;
+  border-radius: 20px;
+  color: white;
+  height: 50px;
+  font-size: 20px;
+  font-weight: 600;
+  width: 80%;
+  align-self: center;
+}
+
+.indec{
+  border: none;  
+  border-radius: 50%;
+}
+.vi{
+  border-radius: 10px;
+  border: none;
+}
+
+.sec{
+  display: flex;
+  gap: 5px;
+}
+
+.sec input{
+  text-align: center;
+}
+
+.date_{
+  border: none;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.texts button{
+  background-color:rgba(0, 0, 0, 0);
+  width: 30%;
+  border: 1px solid white;
+  font-weight: bold;
+  border-radius: 20px;
+  color: white;
+  height: 40px;
+}
