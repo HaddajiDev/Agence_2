@@ -61,9 +61,10 @@ function ImagesSection() {
 						<div class='overlay-text'>
 							<h2>THE TRIP OF YOUR DREAM</h2>
 							<p>~~~~~~</p>
-							<h2>THE TRIP OF YOUR DREAM</h2>
+							<p>Our team is ready to provide you with unique weekly travel insights that include photos, videos, and articles about untravelled tourist paths. We know everything about the places you’ve never been to!</p>
+							<button>Learn More</button>
 						</div>
-						<button>Learn More</button>
+						
 					</div>
 					<div className='col-md-2'></div>
 
