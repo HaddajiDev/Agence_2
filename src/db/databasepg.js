@@ -36,3 +36,10 @@ app.post('/insert', async (req, res) => {
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
 });
+
+//npm i
+//install pg admin
+// data base mydb
+// password 12345
+// table named user
+// cols : id, name, role
