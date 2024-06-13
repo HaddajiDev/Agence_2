@@ -27,8 +27,7 @@ app.post('/insert', async (req, res) => {
         const result = await client.query(query);
         res.json(result.rows[0]);
     } catch (err) {
-        console.error(err.message);
-        res.status(500).send('Server Error');
+        console.error(err.message);        
     }
 });
 
