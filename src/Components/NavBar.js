@@ -1,8 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-
+import axios from 'axios';
 
 function NavBar() {
+	const [name, setName] = useState('');
+	const [role, setRole] = useState('');
+
+	const handleSubmit = async (e) => {
+        e.preventDefault();        
+        const name_ = name;
+        const role_ = role;
+        try {
+            const response = await axios.post('http://localhost:5000/insert', { name_, role_ });
+            console.log('Inserted Row:', response.data);
+        } catch (error) {
+            console.error('Error inserting data:', error);
+        }
+    };
+
   return (
 	<div className=''>
 		<div className='nav_top'>
@@ -18,7 +33,12 @@ function NavBar() {
 				<div>
 					<img src='https://cdn3.iconfinder.com/data/icons/font-awesome-solid/512/envelope-24.png' alt=''/>
 					<p>ahmed@gmail.com</p>
-				</div>				
+				</div>
+				<div>
+					<input type='text' onChange={(e) => setName(e.target.value)}/>
+					<input type='text' onChange={(e) => setRole(e.target.value)}/>
+					<button onClick={handleSubmit}>Submit</button>
+				</div>		
 			</div>
 			
 		</div>

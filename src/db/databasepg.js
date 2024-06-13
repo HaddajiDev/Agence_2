@@ -1,34 +1,37 @@
+const express = require('express');
+const cors = require('cors');
+
+const app = express();
+const port = 3000;
+
 const { Client } = require('pg');
 
-async function select_(col) {
-    const client = new Client({
+app.use(cors());
+app.use(express.json());
+
+const client = new Client({
         
-        user: 'postgres',
-        host: 'localhost',
-        database: 'mydb',
-        password: '12345',
-        port: 5432, 
-    });
+    user: 'postgres',
+    host: 'localhost',
+    database: 'mydb',
+    password: '12345',
+    port: 5432, 
+});
 
-    await client.connect();
+client.connect();
 
+app.post('/insert', async (req, res) => {
+    const {name, role} = req.body;
     try {
-        const res = await client.query(`SELECT ${col} FROM public."user" WHERE id = 1;`);
-        await client.end();
-        return res.rows;
+        const query = `INSERT INTO public."user"(name, role) VALUES(${name}, ${role})`;
+        const result = await client.query(query);
+        res.json(result.rows[0]);
     } catch (err) {
         console.error(err.message);
-        await client.end();
-        return 0;
+        res.status(500).send('Server Error');
     }
-}
+});
 
-async function main() {
-    const result = await select_("name");
-    console.log(result[0].name);
-}
-
-main();
-
-
-
+app.listen(port, () => {
+    console.log(`Server running on port ${port}`);
+});
