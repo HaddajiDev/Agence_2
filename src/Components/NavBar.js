@@ -7,11 +7,14 @@ function NavBar() {
 	const [role, setRole] = useState('');
 
 	const handleSubmit = async (e) => {
-        e.preventDefault();        
-        const name_ = name;
-        const role_ = role;
+        e.preventDefault();
+        console.log("Form submitted");
+        const table = 'public.user';
+        const columns = ['name', 'role'];
+        const values = [name, role];
+
         try {
-            const response = await axios.post('http://localhost:5000/insert', { name_, role_ });
+            const response = await axios.post('http://localhost:5000/insert', { table, columns, values });
             console.log('Inserted Row:', response.data);
         } catch (error) {
             console.error('Error inserting data:', error);
@@ -33,12 +36,7 @@ function NavBar() {
 				<div>
 					<img src='https://cdn3.iconfinder.com/data/icons/font-awesome-solid/512/envelope-24.png' alt=''/>
 					<p>ahmed@gmail.com</p>
-				</div>
-				<div>
-					<input type='text' onChange={(e) => setName(e.target.value)}/>
-					<input type='text' onChange={(e) => setRole(e.target.value)}/>
-					<button onClick={handleSubmit}>Submit</button>
-				</div>		
+				</div>				
 			</div>
 			
 		</div>
@@ -53,6 +51,17 @@ function NavBar() {
 				</ul>
 				<button>Book A Tour Now</button>
 			</div>
+			<form onSubmit={handleSubmit}>
+					<div>
+						<label>Name:</label>
+						<input type="text" value={name} onChange={(e) => setName(e.target.value)} />
+					</div>
+					<div>
+						<label>Email:</label>
+						<input type="text" value={role} onChange={(e) => setRole(e.target.value)} />
+					</div>
+					<button type="submit">Insert Data</button>
+				</form>
 			
 		</div>
 		
