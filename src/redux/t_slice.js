@@ -32,6 +32,9 @@ export const tripSlice = createSlice({
 	reducers: {
 	  Add_Trip : (state, action) => {
 		state.triplist.push(action.payload);
+	  },
+	  Edit_Trip: (state, action) => {
+		
 	  }
 	},
   })

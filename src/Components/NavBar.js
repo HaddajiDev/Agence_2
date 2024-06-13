@@ -3,23 +3,7 @@ import { Link } from 'react-router-dom'
 import axios from 'axios';
 
 function NavBar() {
-	const [name, setName] = useState('');
-	const [role, setRole] = useState('');
-
-	const handleSubmit = async (e) => {
-        e.preventDefault();
-        console.log("Form submitted");
-        const table = 'public.user';
-        const columns = ['name', 'role'];
-        const values = [name, role];
-
-        try {
-            const response = await axios.post('http://localhost:5000/insert', { table, columns, values });
-            console.log('Inserted Row:', response.data);
-        } catch (error) {
-            console.error('Error inserting data:', error);
-        }
-    };
+	
 
   return (
 	<div className=''>
@@ -38,7 +22,7 @@ function NavBar() {
 					<p>ahmed@gmail.com</p>
 				</div>				
 			</div>
-			
+			<Link to='login'>Login</Link>
 		</div>
 		<div className='nav_sticky'>
 			<div className='container'>
@@ -50,18 +34,7 @@ function NavBar() {
 					<li className='nav-item'><Link className='item'>Trips</Link></li>
 				</ul>
 				<button>Book A Tour Now</button>
-			</div>
-			<form onSubmit={handleSubmit}>
-					<div>
-						<label>Name:</label>
-						<input type="text" value={name} onChange={(e) => setName(e.target.value)} />
-					</div>
-					<div>
-						<label>Email:</label>
-						<input type="text" value={role} onChange={(e) => setRole(e.target.value)} />
-					</div>
-					<button type="submit">Insert Data</button>
-				</form>
+			</div>			
 			
 		</div>
 		

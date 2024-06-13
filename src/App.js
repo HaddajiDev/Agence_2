@@ -1,15 +1,20 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from './Components/NavBar';
-import ImagesSection from './Components/ImagesSection';
-import MiddleSection from './Components/MiddleSection';
+import { Route, Routes } from 'react-router-dom';
+import Signup from './Components/SignUp';
+import Home from './Components/Home';
+
 
 function App() {
   return (
     <div className="App">
       <NavBar />
-      <ImagesSection />
-      <MiddleSection />
+      
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='login' element={<Signup />}/>
+      </Routes>
     </div>
   );
 }
