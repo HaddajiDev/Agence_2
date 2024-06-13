@@ -20,7 +20,6 @@ const client = new Client({
 async function connect(){
     await client.connect();
 }
-
 connect();
 
 app.post('/insert', async (req, res) => {
@@ -31,7 +30,6 @@ app.post('/insert', async (req, res) => {
         res.json(result.rows[0]);
     } catch (err) {
         console.error(err.message);
-        res.status(500).send('Server Error');
     }
 });
 
