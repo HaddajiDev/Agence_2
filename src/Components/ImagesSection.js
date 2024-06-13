@@ -37,7 +37,6 @@ function ImagesSection() {
     useEffect(() => {
         const interval = setInterval(() => {
             setOpacity(0);
-
             setTimeout(() => {
                 setCount((prevCount) => {
                     if (prevCount >= resetValue) {
