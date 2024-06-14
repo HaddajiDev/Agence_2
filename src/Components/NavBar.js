@@ -1,10 +1,13 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
-import axios from 'axios';
+import React from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 
-function NavBar() {
-	
-
+function NavBar({ currentUser, onLogout }) {
+	const navigate = useNavigate();  	
+	console.log(currentUser);
+	const LogOut = () => {
+		onLogout();
+		navigate('/');
+	  };
   return (
 	<div className=''>
 		<div className='nav_top'>
@@ -21,14 +24,27 @@ function NavBar() {
 					<img src='https://cdn3.iconfinder.com/data/icons/font-awesome-solid/512/envelope-24.png' alt=''/>
 					<p>ahmed@gmail.com</p>
 				</div>				
-			</div>
-			<Link to='login'>Login</Link>
+			</div>		
+				
+				{currentUser ? (
+					<div className='login_si'>
+						<p className='username'>{currentUser.username}</p>
+						<button onClick={LogOut}>Logout</button>
+					</div>
+				):
+					<div className='login_si'>
+						<Link to='login'><button>Login</button></Link>
+						<Link to='register'><button>SignUp</button></Link>
+					</div>					
+				}
+			
+			
 		</div>
 		<div className='nav_sticky'>
 			<div className='container'>
 				<img src='https://ideogram.ai/assets/image/lossless/response/3rZmluLMTjeYAqpP7eMxOA' alt=''/>
 				<ul>
-					<li className='nav-item'><Link className='item'>Home</Link></li>
+					<li className='nav-item'><Link className='item' to='/'>Home</Link></li>
 					<li className='nav-item'><Link className='item'>Contact</Link></li>
 					<li className='nav-item'><Link className='item'>About Us</Link></li>
 					<li className='nav-item'><Link className='item'>Trips</Link></li>

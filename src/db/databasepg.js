@@ -1,7 +1,6 @@
+//config
 const express = require('express');
 const cors = require('cors');
-const bcrypt = require('bcrypt');
-
 
 const app = express();
 const port = 5000;
@@ -24,33 +23,45 @@ async function connect(){
 }
 connect();
 
-app.post('/signup', async (req, res) => {
-    const { table, columns, values } = req.body;
-    try {
-        const query = `INSERT INTO ${table} (${columns.join(', ')}) VALUES (${values.map((v, i) => `$${i + 1}`).join(', ')}) RETURNING *;`;
-        const result = await client.query(query, values);
-        res.json(result.rows[0]);
-    } catch (err) {
-        console.error(err.message);
-    }
-});
-
-app.post('/login', async (req, res) => {
-    const { table, values } = req.body;
-  try {
-        const q = `SELECT * FROM ${table}`;
-        const result = await client.query(q, values);
-        if (result.rows.length === 0) {
-            return res.json({ message: 'User not found' });
-        }    
-  } catch (err) {
-        console.error(err.message);
-        res.send('Server Error');
-    }
-});
 
 
-app.listen(port, () => {
-    console.log(`Server running on port ${port}`);
-});
+
+
+
+
+
+
+
+
+
+
+// app.post('/signup', async (req, res) => {
+//     const { table, columns, values } = req.body;
+//     try {
+//         const query = `INSERT INTO ${table} (${columns.join(', ')}) VALUES (${values.map((v, i) => `$${i + 1}`).join(', ')}) RETURNING *;`;
+//         const result = await client.query(query, values);
+//         res.json(result.rows[0]);
+//     } catch (err) {
+//         console.error(err.message);
+//     }
+// });
+
+// app.post('/login', async (req, res) => {
+//     const { table, values } = req.body;
+//   try {
+//         const q = `SELECT * FROM ${table}`;
+//         const result = await client.query(q, values);
+//         if (result.rows.length === 0) {
+//             return res.json({ message: 'User not found' });
+//         }    
+//   } catch (err) {
+//         console.error(err.message);
+//         res.send('Server Error');
+//     }
+// });
+
+
+// app.listen(port, () => {
+//     console.log(`Server running on port ${port}`);
+// });
 
