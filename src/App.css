@@ -40,6 +40,7 @@ html{
   border-radius: 20px;
   color: white;
   height: 40px;
+  width: 80px;
   &:hover{
     background-color:rgba(255, 255, 255, 0.2);
   }
@@ -140,6 +141,11 @@ html{
   display: inline-block;
   width: 100%;
 }
+.image-container img{
+  width: 100%;
+  height: 450px !important;
+  filter: brightness(40%) !important;
+}
 
 .text-container {
   position: absolute;
@@ -150,7 +156,7 @@ html{
 }
 
 .overlay-text {    
-  background: rgba(0, 0, 0, 0.5);
+  text-align: center !important;
   padding: 20px;
   border-radius: 10px;
   text-align: left;
@@ -158,79 +164,20 @@ html{
   color: white;
 }
 
+.overlay-text h2{
+  font-size: 50px;
+  font-weight: 900 !important;
+}
+
 .texts{
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 150px;  
+  gap: 150px;
+  font-weight: 900;
 }
 
-.search_flight{
-  display: flex;
-  flex-direction: column;  
-  background: rgba(255, 255, 255, 0.5);
-  padding: 20px;
-  border-radius: 10px;
-  color: black;  
-}
 
-.m-2-sec{
-  display: flex;
-  justify-content: space-around;
-}
-
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
-}
-
-.small-title{
-  font-size: 12px;
-  font-weight: bold;
-  
-}
-
-.sel{
-  padding: 2%;
-  border: none;
-  border-radius: 20px;  
-}
-
-.search_flight button{
-  border: none;
-  background-color: #FF8C00;
-  border-radius: 20px;
-  color: white;
-  height: 50px;
-  font-size: 20px;
-  font-weight: 600;
-  width: 80%;
-  align-self: center;
-}
-
-.indec{
-  border: none;  
-  border-radius: 50%;
-}
-.vi{
-  border-radius: 10px;
-  border: none;
-}
-
-.sec{
-  display: flex;
-  gap: 5px;
-}
-
-.sec input{
-  text-align: center;
-}
-
-.date_{
-  border: none;
-  border-radius: 20px;
-  text-align: center;
-}
 
 .texts button{
   background-color:rgba(0, 0, 0, 0);
@@ -588,4 +535,98 @@ input[type=number]::-webkit-outer-spin-button {
 .login-form label{
   font-size: large;
   margin-bottom: 2px;
+}
+
+.about{
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.about h1{
+  font-size: 100px;
+  font-weight: bolder;
+}
+
+.ab-img img{
+  filter: brightness(70%) !important;
+  height: 450px;
+}
+
+.abt-btn button{
+  background-color:rgba(0, 0, 0, 0);  
+  border: 1px solid black;
+  font-weight: bold;
+  border-radius: 20px;
+  color: black;
+  height: 40px;
+  &:hover{
+    background-color:rgba(0, 0, 0, 0.2);
+  }
+}
+
+.pep{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.pep h3{
+  color: #FF8C00;
+  font-weight: 600;
+}
+
+.pep img{
+  width: 250px;
+  border-radius: 50%;
+}
+
+.contact-fs{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+  gap: 15px;
+}
+.contact-fs img{
+  width: 60px;
+  align-self: center;
+}
+
+.line{
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+
+.line input{
+  border: 1px solid #FF8C00;
+  text-align: center;
+  height: 50px;
+  border-radius: 20px;
+}
+
+.line textarea{
+  width: 400px;
+  border: 1px solid #FF8C00;
+  border-radius: 20px;
+  height: 100px;
+}
+.cul{
+  display: flex;
+  flex-direction: column;
+}
+
+.send-btn{  
+  text-align: center;
+  border: none;
+  border-radius: 20px;
+  height: 40px;
+  color: white;
+  background-color: #FF8C00;
+  font-weight: 800;
+  font-size: 20px;
 }

@@ -45,12 +45,13 @@ function NavBar({ currentUser, onLogout }) {
 				<img src='https://ideogram.ai/assets/image/lossless/response/3rZmluLMTjeYAqpP7eMxOA' alt=''/>
 				<ul>
 					<li className='nav-item'><Link className='item' to='/'>Home</Link></li>
-					<li className='nav-item'><Link className='item'>Contact</Link></li>
+					<li className='nav-item'><Link className='item' to='/contact'>Contact</Link></li>
+					<li className='nav-item'><Link className='item' to='/AboutUs'>About Us</Link></li>
 					<li className='nav-item'><Link className='item' to='/blogs'>Blogs</Link></li>
 					<li className='nav-item'><Link className='item' to='/allTours'>Trips</Link></li>
 				</ul>
 				<button onClick={() => navigate('/allTours')}>Book A Tour Now</button>
-			</div>			
+			</div>
 			
 		</div>
 		

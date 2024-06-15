@@ -9,8 +9,8 @@ function Footer() {
           <div className='col-lg-6 links-foo'>
             <h4><Link to='/allTours' style={{all: 'unset'}}>Trips</Link></h4>
             <h4><Link to='/blogs' style={{all: 'unset'}}>Blogs</Link></h4>
-            <h4>Contact</h4>
-            <h4>About us</h4>
+            <h4><Link to='/contact' style={{all: 'unset'}}>Contact</Link></h4>
+            <h4><Link to='/AboutUs' style={{all: 'unset'}}>About Us</Link></h4>
           </div>
           <div className='col-lg-6 last'>
             <h2>Book you trip Now</h2>

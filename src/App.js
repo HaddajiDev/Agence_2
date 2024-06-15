@@ -10,6 +10,9 @@ import AllTrips from './Components/AllTrips.js';
 import Trip from './Components/Trip.js';
 import Footer from './Components/Footer';
 import AllBlogs from './Components/AllBlogs.js';
+import ScrollTop from './Components/ScrollTop.js';
+import AboutUs from './Components/AboutUs.js';
+import Contact from './Components/Contact.js';
 
 
 function App() {
@@ -27,6 +30,7 @@ function App() {
     <div className="App">
       <NavBar currentUser={currentUser} onLogout={handleLogout} />
       
+      <ScrollTop />
         <Routes>
             <Route path='/' element={<Home />} />
             <Route path="/register" element={<Signup />} />
@@ -34,6 +38,8 @@ function App() {
             <Route path='/allTours' element={<AllTrips currentUser={currentUser}/>} />          
             <Route path='/trip/:id' element={<Trip />} />
             <Route path="/blogs" element={<AllBlogs currentUser={currentUser}/>} />
+            <Route path='/AboutUs' element={<AboutUs />} />
+            <Route path='/contact' element={<Contact />} />
         </Routes>
 
         <Footer />
