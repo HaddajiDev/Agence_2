@@ -6,6 +6,10 @@ import Signup from './Components/SignUp';
 import Home from './Components/Home';
 import Login from './Components/Login.js';
 import { useState } from 'react';
+import AllTrips from './Components/AllTrips.js';
+import Trip from './Components/Trip.js';
+import Footer from './Components/Footer';
+import AllBlogs from './Components/AllBlogs.js';
 
 
 function App() {
@@ -26,8 +30,13 @@ function App() {
         <Routes>
             <Route path='/' element={<Home />} />
             <Route path="/register" element={<Signup />} />
-            <Route path="/login" element={<Login onLogin={handleLogin} />} />            
+            <Route path="/login" element={<Login onLogin={handleLogin} />} />
+            <Route path='/allTours' element={<AllTrips currentUser={currentUser}/>} />          
+            <Route path='/trip/:id' element={<Trip />} />
+            <Route path="/blogs" element={<AllBlogs currentUser={currentUser}/>} />
         </Routes>
+
+        <Footer />
       
     </div>
   );

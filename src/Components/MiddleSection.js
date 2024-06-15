@@ -5,17 +5,21 @@ import plane from '../plane.png';
 import hotel from '../hotel.png';
 import map from '../map.png';
 import prasol from '../parasol.png';
+import { useNavigate } from 'react-router-dom';
+
 
 function MiddleSection() {
+	const navigate = useNavigate();
 	const trip = useSelector((state) => state.trip.triplist);
+	const tripsSliced = trip.slice(0, 6);
   return (
 	<div className='container' style={{marginTop: 50}}>
 		<div className='row'>
 			<h1 className='col-lg-9'>Our Tours</h1>
-			<button className='col-lg-3 vw-tour'>View All Tours</button>
+			<button className='col-lg-3 vw-tour' onClick={() => navigate('/allTours')}>View All Tours</button>
 		</div>
 		<div className='row'>
-			{trip.map((el) => <div className='col-lg-4 col-sm-12'><TourCard el={el} /></div>)}
+			{tripsSliced.map((el) => <div className='col-lg-4 col-sm-12'><TourCard el={el} /></div>)}
 		</div>
 		<div className='row'>			
 			<div className='col-5 d-flex justify-content-center w-100 mt-5'><h1>Our Services</h1></div>			

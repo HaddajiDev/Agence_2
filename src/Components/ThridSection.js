@@ -1,13 +1,13 @@
 import React from 'react';
-import comment from '../comment.png';
 import quote from '../quote.png';
+import { useSelector } from 'react-redux';
+import BlogCard from './BlogCard';
+import { useNavigate } from 'react-router-dom';
 
 function ThridSection() {
-    const imgs = [
-        'https://ideogram.ai/assets/image/lossless/response/hwT280ngQEau8fFUhy9IWg',
-        'https://ideogram.ai/assets/image/lossless/response/SIDfl2uFTU6vOfySnjjd-Q',
-        'https://ideogram.ai/assets/image/lossless/response/O7StsiMGTGGoX_bdq6eKEA'
-    ]
+    const blogs = useSelector((state) => state.blog.bloglist);
+    const two_blogs = blogs.slice(0, 2);
+    const naviagta = useNavigate();
   return (
     <div>
         <div className='container' style={{marginTop: 120}}>
@@ -15,52 +15,12 @@ function ThridSection() {
             <h1 className='col-12' style={{textAlign: 'center'}}>LATEST NEWS</h1>
         </div>
         <div className='row'>
-            <div className='col-lg-6 col-sm-12'>
-                <div class="zoomable">			
-                    <img src={imgs[0]} alt="" class="img-fluid" />                    
-                </div>
-                <div className='news-info'>
-                    <div className='news-fs'>
-                        <h6>HOTELS</h6>
-                        <h5>By Ahmed</h5>
-                    </div>
-                    <h3>Top 10 Hotels to Stay At: Exclusive Rating by Sealine Travel Experts</h3>
-                    <hr />
-                    <div className='news-fs'>
-                        <p>JULY 1, 2022</p>
-                        <div className='comment'>
-                            <img src={comment} alt=''/>
-                            <p>12</p>
-                        </div>
-                        
-                    </div>
-                </div>
-            </div>
-            <div className='col-lg-6 col-sm-12'>
-                <div class="zoomable">			
-                    <img src={imgs[2]} alt="" class="img-fluid" />                    
-                </div>
-                <div className='news-info'>
-                    <div className='news-fs'>
-                        <h6>TIPS</h6>
-                        <h5>By Youssef</h5>
-                    </div>
-                    <h3>How to Plan Your Vacation in Advance and Why It’s Beneficial</h3>
-                    <hr />
-                    <div className='news-fs'>
-                        <p>AUG 21, 2021</p>
-                        <div className='comment'>
-                            <img src={comment} alt=''/>
-                            <p>136</p>
-                        </div>                        
-                    </div>
-                </div>
-            </div>
+            {two_blogs.map((el) => <div className='col-lg-6 col-sm-12'><BlogCard blog={el}/></div>)}           
         </div>
 
         <div className='row'>
             <div className='col-4'></div>
-            <button className='allBlogs col-4'>View all blog posts</button>     
+            <button className='allBlogs col-4' onClick={() => naviagta('/blogs')}>View all blog posts</button>     
             <div className='col-4'></div>
         </div>
 
