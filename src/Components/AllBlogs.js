@@ -19,7 +19,7 @@ function AllBlogs({currentUser}) {
 			}
 		</div>
 		<div className='row'>
-			{blogs.map((el) => <div className='col-lg-6 col-sm-12'><BlogCard blog={el}/></div>)}
+			{blogs.map((el) => <div className='col-lg-6 col-sm-12'><BlogCard blog={el} currentUser={currentUser}/></div>)}
 		</div>
 	</div>
   )

@@ -33,13 +33,13 @@ function Trip() {
         </div>
         <div className='col-lg-6 col-sm-12'>
           <div class="zoomable">
-            <img src={state?.poster} style={{width: 500}}/>
+            <img src={state?.poster} style={{width: 500}} alt=''/>
           </div>
           <div class="zoomable">
-            <img src={state?.poster_2} style={{width: 500, marginTop: 20}}/>
+            <img src={state?.poster_2} style={{width: 500, marginTop: 20}} alt=''/>
           </div>          
           <div class="zoomable">
-            <img src={state?.poster_3} style={{width: 500, marginTop: 20}}/>
+            <img src={state?.poster_3} style={{width: 500, marginTop: 20}} alt=''/>
           </div>
         </div>
     </div>    

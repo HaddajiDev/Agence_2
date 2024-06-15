@@ -500,3 +500,92 @@ input[type=number]::-webkit-outer-spin-button {
   
   cursor: pointer !important;
 }
+
+.footer_con{
+  background-color: #333333;
+  color: white;
+  height: 215px;
+  padding: 1%;  
+  margin: 0;  
+}
+
+.last{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+}
+
+.last button{
+  border: #FF8C00 1px solid;
+  width: 50%;
+  height: 50px;
+  font-size: 25px;
+  font-weight: 900;
+  border-radius: 20px;
+  color: #FF8C00;
+  background-color: rgb(255, 255, 255, 0);
+  &:hover{
+    background-color: rgb(255, 140, 0, 0.2);
+  }
+}
+
+.c{
+  text-align: center;
+  
+  font-size: small;
+  color: #71816d;
+}
+
+.links-foo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.links-foo h4:hover{
+  color: #FF8C00;
+  cursor: pointer;
+}
+
+.login-form{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+}
+
+.login-form input{
+  width: 60%;
+  border-radius: 10px;
+  border: 1px #FF8C00 solid;
+  height: 35px;
+  text-align: center;
+}
+.lab {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form button{
+  background-color: #FF8C00;
+  border: none;
+  width: 30%;
+  align-self: center;
+  color: white;
+  height: 50px;
+  border-radius: 20px;
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.login-form label{
+  font-size: large;
+  margin-bottom: 2px;
+}

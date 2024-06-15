@@ -2,8 +2,6 @@ import axios from 'axios';
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 
-
-
 function Login({ onLogin }) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');  
@@ -34,18 +32,24 @@ function Login({ onLogin }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label>Email</label>
-        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-      </div>
-      <div>
-        <label>Password</label>
-        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-      </div>
-      <button type="submit">Login</button>
-    </form>
-  )
+  <div className='container mt-5'>
+    <div className='row'>
+      <div className='col-3'></div>
+      <form onSubmit={handleSubmit} className='col-6 login-form'>
+        <div className='lab'>
+          <label>Email</label>
+          <input type="email" placeholder='Enter your Email' value={email} onChange={(e) => setEmail(e.target.value)} />
+        </div>
+        <div className='lab'>
+          <label>Password</label>
+          <input type="password" placeholder='Enter your password' value={password} onChange={(e) => setPassword(e.target.value)} />
+        </div>
+        <button type="submit">Login</button>
+      </form>
+      <div className='col-3'></div>
+    </div>
+  </div>
+  );
 }
 
 export default Login

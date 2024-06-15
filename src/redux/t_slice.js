@@ -132,7 +132,7 @@ export const tripSlice = createSlice({
 		state.triplist.push(action.payload);
 	  },
 	  Edit_Trip: (state, action) => {
-		let index = state.triplist.findIndex((el) => el.id == action.payload.id);
+		let index = state.triplist.findIndex((el) => el.id === action.payload.id);
 		state.triplist[index] = action.payload.editedTrip;
 	  },
 	  Delete_Trip: (state, action) => {

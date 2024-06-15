@@ -46,7 +46,7 @@ function NavBar({ currentUser, onLogout }) {
 				<ul>
 					<li className='nav-item'><Link className='item' to='/'>Home</Link></li>
 					<li className='nav-item'><Link className='item'>Contact</Link></li>
-					<li className='nav-item'><Link className='item'>About Us</Link></li>
+					<li className='nav-item'><Link className='item' to='/blogs'>Blogs</Link></li>
 					<li className='nav-item'><Link className='item' to='/allTours'>Trips</Link></li>
 				</ul>
 				<button onClick={() => navigate('/allTours')}>Book A Tour Now</button>

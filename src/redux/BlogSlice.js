@@ -8,7 +8,7 @@ const initialState = {
 			type: "HOTELS",
 			header: "Top 10 Hotels to Stay At: Exclusive Rating by Sealine Travel Experts",
 			author: "Ahmed",
-			commet: 12,
+			comment: 12,
 			date: "JULY 1, 2022"	
 		},
 		{
@@ -17,7 +17,7 @@ const initialState = {
 			type: "TIPS",
 			header: "How to Plan Your Vacation in Advance and Why It’s Beneficial",
 			author: "Youssef",
-			commet: 136,
+			comment: 136,
 			date: "AUG 21, 2021"
 		},
 		{
@@ -137,10 +137,17 @@ export const BlogSlice = createSlice({
 	reducers: {
 		Add_Blog: (state, action) => {
 			state.bloglist.push(action.payload);
+		},
+		Edit_Blog: (state, action) => {
+			let index = state.bloglist.findIndex((el) => el.id === action.payload.id);
+			state.bloglist[index] = action.payload.editedBlog;
+		},
+		Delete_Blog: (state, action) => {
+			state.bloglist = state.bloglist.filter((el) => el.id !== action.payload);
 		}
 	}
 });
 
-export const { Add_Blog } = BlogSlice.actions
+export const { Add_Blog, Edit_Blog, Delete_Blog } = BlogSlice.actions
   
   export default BlogSlice.reducer

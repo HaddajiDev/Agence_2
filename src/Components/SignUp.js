@@ -24,21 +24,28 @@ function Signup() {
 	  }
 	};
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label>Username</label>
-        <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
+    <div className='container mt-5'>
+      <div className='row'>
+        <div className='col-3'></div>
+        <form onSubmit={handleSubmit} className='col-6 login-form'>
+            <div className='lab'>
+              <label>Username</label>
+              <input type="text" placeholder='Enter Your username' value={username} onChange={(e) => setUsername(e.target.value)} />
+            </div>
+            <div className='lab'>
+              <label>Email</label>
+              <input type="email" placeholder='Enter Your Email' value={email} onChange={(e) => setEmail(e.target.value)} />
+            </div>
+            <div className='lab'>
+              <label>Password</label>
+              <input type="password" placeholder='Enter Your password' value={password} onChange={(e) => setPassword(e.target.value)} />
+            </div>
+            <button type="submit">SignUp</button>
+        </form>
+        <div className='col-3'></div>
       </div>
-      <div>
-        <label>Email</label>
-        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-      </div>
-      <div>
-        <label>Password</label>
-        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-      </div>
-      <button type="submit">Register</button>
-    </form>
+    </div>
+    
   )
 }
 
