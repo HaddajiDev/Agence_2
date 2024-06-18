@@ -5,8 +5,7 @@ import BlogCard from './BlogCard';
 import { useNavigate } from 'react-router-dom';
 
 function ThridSection() {
-    const blogs = useSelector((state) => state.blog.bloglist);
-    const two_blogs = blogs.slice(0, 2);
+    const blogs = useSelector((state) => state.blog.bloglist);    
     const naviagta = useNavigate();
   return (
     <div>
@@ -15,7 +14,7 @@ function ThridSection() {
             <h1 className='col-12' style={{textAlign: 'center'}}>LATEST NEWS</h1>
         </div>
         <div className='row'>
-            {two_blogs.map((el) => <div className='col-lg-6 col-sm-12'><BlogCard blog={el}/></div>)}           
+            {blogs.slice(0, 2).map((el) => <div className='col-lg-6 col-sm-12'><BlogCard blog={el}/></div>)}           
         </div>
 
         <div className='row'>
